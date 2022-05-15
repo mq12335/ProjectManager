@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/drawable/button_background.xml" value="0.1035" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/drawable/comment_dialog_bg.xml" value="0.1" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/drawable/table_content_cell_bg.xml" value="0.1" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/drawable/table_header_cell_bg.xml" value="0.1" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/drawable/user_image_background.xml" value="0.1" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/activity_base.xml" value="0.24947916666666667" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/activity_ceate_project.xml" value="0.24947916666666667" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/activity_dashboard.xml" value="0.24947916666666667" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/activity_forgot_password.xml" value="0.24947916666666667" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/activity_login.xml" value="0.24947916666666667" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/activity_login2.xml" value="0.24947916666666667" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/activity_project_details.xml" value="0.24947916666666667" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/activity_splash.xml" value="0.24947916666666667" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/activity_task_create.xml" value="0.1" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/activity_user_profile.xml" value="0.24947916666666667" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/custom_dialog.xml" value="0.24947916666666667" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/dialog_progress.xml" value="0.24947916666666667" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/fragment_dashboard.xml" value="0.24947916666666667" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/table_list_item.xml" value="0.2484375" />
+        <entry key="..\:/6239/ProjectManager/app/src/main/res/menu/bottom_nav_menu.xml" value="0.24947916666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

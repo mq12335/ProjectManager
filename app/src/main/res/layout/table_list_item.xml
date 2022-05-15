@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/ProjectName"
+        android:layout_width="184dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:background="@color/colorLightGrey"
+        android:text="Project Name"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/Status"
+        android:layout_width="226dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@color/colorLightGrey"
+        android:text="Status"
+        android:textSize="18sp" />
+
+</LinearLayout>
