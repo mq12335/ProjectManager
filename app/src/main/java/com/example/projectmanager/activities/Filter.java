@@ -37,6 +37,7 @@ public class Filter extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         String porject = bundle.getString("status");
+        String user = bundle.getString("User");
 
         List<String> arr = new ArrayList<String>();
         arr.addAll(Arrays.asList(projectName));
@@ -50,7 +51,7 @@ public class Filter extends AppCompatActivity {
 
         runOnUiThread(() -> {
             viewModel = new ViewModelProvider(Filter.this).get(ProjectViewModel.class);
-            viewModel.getProjectsStatus("user1", ProjectViewModel.Direction.ASCENDING).observe(Filter.this,
+            viewModel.getProjectsStatus(user, ProjectViewModel.Direction.ASCENDING).observe(Filter.this,
                     new Observer<ArrayList<HashMap<String, String>>>() {
                         @Override
                         public void onChanged(ArrayList<HashMap<String, String>> hashMaps) {

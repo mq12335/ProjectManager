@@ -33,6 +33,10 @@ public class ManagerList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager_list);
 
+        Intent my = getIntent();
+        Bundle bundle1 = my.getExtras();
+        String user = bundle1.getString("User");
+
         List<String> arr = new ArrayList<String>();
         arr.addAll(Arrays.asList(projectName));
         List<String> arr2 = new ArrayList<String>();
@@ -48,7 +52,7 @@ public class ManagerList extends AppCompatActivity {
 
         runOnUiThread(() -> {
             viewModel = new ViewModelProvider(ManagerList.this).get(ProjectViewModel.class);
-            viewModel.getProjectsStatus("user1",ProjectViewModel.Direction.ASCENDING).observe(ManagerList.this,
+            viewModel.getProjectsStatus(user.isEmpty()?"user1":user,ProjectViewModel.Direction.ASCENDING).observe(ManagerList.this,
                     new Observer<ArrayList<HashMap<String, String>>>() {
                 @Override
                 public void onChanged(ArrayList<HashMap<String, String>> hashMaps) {
@@ -135,8 +139,12 @@ public class ManagerList extends AppCompatActivity {
 
         createProject.setOnClickListener(v -> {
             Intent intent = new Intent(ManagerList.this, CeateProject.class);
+            Bundle b1 = new Bundle();
+            b1.putString("User", user);
+            intent.putExtras(b1);
             startActivity(intent);
             finish();
+
         });
         createTask.setOnClickListener(v -> {
             Intent intent = new Intent(ManagerList.this, TaskCreate.class);
@@ -146,6 +154,7 @@ public class ManagerList extends AppCompatActivity {
             Intent intent = new Intent(ManagerList.this, Filter.class);
             Bundle bundle = new Bundle();
             bundle.putString("status","complete");
+            bundle.putString("User",user);
             intent.putExtras(bundle);
             startActivity(intent);
 
@@ -154,6 +163,7 @@ public class ManagerList extends AppCompatActivity {
             Intent intent = new Intent(ManagerList.this, Filter.class);
             Bundle bundle = new Bundle();
             bundle.putString("status","on going");
+            bundle.putString("User",user);
             intent.putExtras(bundle);
             startActivity(intent);
         });
