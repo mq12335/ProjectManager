@@ -25,13 +25,16 @@
         <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/fragment_dashboard.xml" value="0.24947916666666667" />
         <entry key="..\:/6239/ProjectManager/app/src/main/res/layout/table_list_item.xml" value="0.2484375" />
         <entry key="..\:/6239/ProjectManager/app/src/main/res/menu/bottom_nav_menu.xml" value="0.24947916666666667" />
+        <entry key="..\:/gitclone/ProjectManager/app/src/main/res/drawable/textviewbk.xml" value="0.1" />
         <entry key="..\:/gitclone/ProjectManager/app/src/main/res/layout/activity_ceate_project.xml" value="0.19427083333333334" />
+        <entry key="..\:/gitclone/ProjectManager/app/src/main/res/layout/activity_filter.xml" value="0.22826086956521738" />
         <entry key="..\:/gitclone/ProjectManager/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
         <entry key="..\:/gitclone/ProjectManager/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/gitclone/ProjectManager/app/src/main/res/layout/activity_manager_list.xml" value="0.22826086956521738" />
         <entry key="..\:/gitclone/ProjectManager/app/src/main/res/layout/activity_project_detail_m.xml" value="0.22826086956521738" />
         <entry key="..\:/gitclone/ProjectManager/app/src/main/res/layout/activity_project_details.xml" value="0.22826086956521738" />
-        <entry key="..\:/gitclone/ProjectManager/app/src/main/res/layout/lv1_item.xml" value="0.1" />
+        <entry key="..\:/gitclone/ProjectManager/app/src/main/res/layout/lv1_item.xml" value="0.2" />
+        <entry key="..\:/gitclone/ProjectManager/app/src/main/res/layout/singlelv.xml" value="0.13323201621073963" />
       </map>
     </option>
   </component>

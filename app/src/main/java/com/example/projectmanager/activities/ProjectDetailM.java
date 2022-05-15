@@ -67,9 +67,9 @@ public class ProjectDetailM extends AppCompatActivity {
 
                     for (int i = 0; i < outM.length; i++) {
                         Map<String, Object> listitem = new HashMap<String, Object>();
-                        listitem.put("task", outT[i]);
-                        listitem.put("member", outM[i]);
-                        listitem.put("ddl", outD[i]);
+                        listitem.put("task", "task: "+outT[i]);
+                        listitem.put("member", "member:  "+outM[i]);
+                        listitem.put("ddl", "deadline： "+outD[i]);
                         listitem.put("status", outS[i]);
                         itemlist.add(listitem);
                     }
