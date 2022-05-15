@@ -50,6 +50,11 @@ public class CeateProject extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ceate_project);
 
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
+        String user = b.getString("User");
+
+
         viewModel = new ViewModelProvider(CeateProject.this).get(ProjectViewModel.class);
         // viewModel = new ViewModelProvider(ManagerList.this).get(ProjectViewModel.class);
 
@@ -58,6 +63,7 @@ public class CeateProject extends AppCompatActivity {
 //        Button addTaskButton = findViewById(R.id.add_task);
 //        Button deleteTaskButton = findViewById(R.id.delete_task);
         Button submitProjectButton = findViewById(R.id.create_project_submit);
+        Button back = findViewById(R.id.ba);
         EditText dd = findViewById(R.id.DD);
         EditText mm = findViewById(R.id.MM);
         EditText yyyy = findViewById(R.id.YYYY);
@@ -81,10 +87,19 @@ public class CeateProject extends AppCompatActivity {
 //        });
         submitProjectButton.setOnClickListener(v -> {
             String ddl = dd.getText().toString() + mm.getText().toString() + yyyy.getText().toString();
-            submitProject(createProjectName.getText().toString(), description.getText().toString(), ddl); // *
+            submitProject(createProjectName.getText().toString(), description.getText().toString(), ddl,user); // *
 
         });
 
+        back.setOnClickListener(v ->{
+
+            Intent intent1 = new Intent(CeateProject.this, ManagerList.class);
+            Bundle mb = new Bundle();
+            mb.putString("User", user);
+            intent1.putExtras(mb);
+            startActivity(intent1);
+            finish();
+        });
     }
 
 //    @SuppressLint("SetTextI18n")
@@ -128,10 +143,13 @@ public class CeateProject extends AppCompatActivity {
 //        System.out.println("ccc" + i);
 //    }
 
-    public void submitProject(String createProjectName, String projectDescription, String ddl) {
+    public void submitProject(String createProjectName, String projectDescription, String ddl,String user) {
 
-        viewModel.addProject(createProjectName, "user1", projectDescription, ddl);
+        viewModel.addProject(createProjectName, user.isEmpty()?"user1":user, projectDescription, ddl);
         Intent intent = new Intent(CeateProject.this, ManagerList.class);
+        Bundle mb = new Bundle();
+        mb.putString("User", user);
+        intent.putExtras(mb);
         startActivity(intent);
         finish();
 
