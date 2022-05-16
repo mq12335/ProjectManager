@@ -4,7 +4,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#87CEFA">
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="150sp"
         android:layout_height="wrap_content"
         android:id="@+id/projectName"
         android:textSize="20sp"
@@ -19,7 +19,7 @@
         android:id="@+id/project_status"
         android:layout_weight="1"
         android:layout_marginStart="50sp"
-        android:background="	#98FB98"
+        android:background="#FFFF00"
         />
 
 </LinearLayout>
