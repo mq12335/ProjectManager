@@ -36,26 +36,29 @@ public class ManagerList extends AppCompatActivity {
         Intent my = getIntent();
         Bundle bundle1 = my.getExtras();
         String user = bundle1.getString("User");
-
-        List<String> arr = new ArrayList<String>();
-        arr.addAll(Arrays.asList(projectName));
-        List<String> arr2 = new ArrayList<String>();
-        arr2.addAll(Arrays.asList(status));
+        ListView lv1 = (ListView) findViewById(R.id.lv1);
 
 
-        List<Map<String, Object>> itemlist = new ArrayList<Map<String, Object>>();
+
         Button createProject = (Button) findViewById(R.id.creat_project);
         Button createTask = (Button) findViewById(R.id.add_task);
         Button complete = findViewById(R.id.complete);
         Button ongoing = findViewById(R.id.onging);
 
         runOnUiThread(() -> {
-            ListView lv1 = (ListView) findViewById(R.id.lv1);
+
             viewModel = new ViewModelProvider(ManagerList.this).get(ProjectViewModel.class);
             viewModel.getProjectsStatus(user.isEmpty()?"user1":user,ProjectViewModel.Direction.ASCENDING).observe(ManagerList.this,
                     new Observer<ArrayList<HashMap<String, String>>>() {
                 @Override
                 public void onChanged(ArrayList<HashMap<String, String>> hashMaps) {
+                    List<String> arr = new ArrayList<String>();
+                    arr.addAll(Arrays.asList(projectName));
+                    List<String> arr2 = new ArrayList<String>();
+                    arr2.addAll(Arrays.asList(status));
+
+                    List<Map<String, Object>> itemlist = new ArrayList<Map<String, Object>>();
+
                     for (int i = 0; i < hashMaps.size(); i++) {
                         arr.add(hashMaps.get(i).get("name"));
                         arr2.add(hashMaps.get(i).get("status"));
