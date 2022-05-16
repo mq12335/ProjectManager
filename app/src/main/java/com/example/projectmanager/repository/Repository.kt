@@ -38,11 +38,13 @@ class Repository {
     private val auth = FirebaseAuth.getInstance()
     private val currentUser by lazy { MutableLiveData<User>() }
     private val users by lazy { MutableLiveData<List<User>>() }
+    private val project by lazy { MutableLiveData<Project>() }
     private val projects by lazy { MutableLiveData<List<Project>>() }
     private val tasks by lazy { MutableLiveData<List<Task>>() }
     private val onGoingTasks by lazy { MutableLiveData<List<Task>>() }
     private lateinit var usersRegistration: ListenerRegistration
     private lateinit var projectsRegistration: ListenerRegistration
+    private lateinit var projectRegistration: ListenerRegistration
     private lateinit var tasksRegistration: ListenerRegistration
 
 //    fun getCurrentUserName(): String? {
@@ -191,12 +193,32 @@ class Repository {
             .addOnFailureListener { onFailureAction() }
     }
 
+    fun getProjectByName(projectName: String): MutableLiveData<Project> {
+        projectRegistration = db.collection(PROJECT_COLLECTION).document(projectName)
+            .addSnapshotListener { project, error ->
+                if (error != null) {
+                    Log.w(TAG, "listen:error", error)
+                    return@addSnapshotListener
+                }
+
+                if (project != null) {
+                    this.project.value = project.toObject()
+                }
+            }
+        return this.project
+    }
+
+    fun stopListeningForProjectChanges() {
+        if (::projectRegistration.isInitialized)
+            projectRegistration.remove()
+    }
+
     fun onProjectsChange(userName: String, direction: String): LiveData<List<Project>> {
         listenForProjectsChanges(userName, direction)
         return projects
     }
 
-    fun stopListeningForProjectsChangesForMember() {
+    fun stopListeningForProjectsChanges() {
         if (::projectsRegistration.isInitialized)
             projectsRegistration.remove()
     }

@@ -43,7 +43,6 @@ public class ManagerList extends AppCompatActivity {
         arr2.addAll(Arrays.asList(status));
 
 
-        ListView lv1 = (ListView) findViewById(R.id.lv1);
         List<Map<String, Object>> itemlist = new ArrayList<Map<String, Object>>();
         Button createProject = (Button) findViewById(R.id.creat_project);
         Button createTask = (Button) findViewById(R.id.add_task);
@@ -51,6 +50,7 @@ public class ManagerList extends AppCompatActivity {
         Button ongoing = findViewById(R.id.onging);
 
         runOnUiThread(() -> {
+            ListView lv1 = (ListView) findViewById(R.id.lv1);
             viewModel = new ViewModelProvider(ManagerList.this).get(ProjectViewModel.class);
             viewModel.getProjectsStatus(user.isEmpty()?"user1":user,ProjectViewModel.Direction.ASCENDING).observe(ManagerList.this,
                     new Observer<ArrayList<HashMap<String, String>>>() {
@@ -148,6 +148,9 @@ public class ManagerList extends AppCompatActivity {
         });
         createTask.setOnClickListener(v -> {
             Intent intent = new Intent(ManagerList.this, TaskCreate.class);
+            Bundle b1 = new Bundle();
+            b1.putString("User", user);
+            intent.putExtras(b1);
             startActivity(intent);
         });
         complete.setOnClickListener( v ->{

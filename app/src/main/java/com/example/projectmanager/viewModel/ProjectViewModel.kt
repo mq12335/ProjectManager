@@ -4,6 +4,9 @@ import androidx.lifecycle.*
 import com.example.projectmanager.model.Project
 import com.example.projectmanager.model.Task
 import com.example.projectmanager.repository.Repository
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 class ProjectViewModel : ViewModel(), DefaultLifecycleObserver {
     private val repository by lazy { Repository() }
@@ -36,6 +39,35 @@ class ProjectViewModel : ViewModel(), DefaultLifecycleObserver {
     enum class Direction {
         ASCENDING,
         DESCENDING
+    }
+
+    fun getProjectsByName(projectName: String) = Transformations.map(repository.getProjectByName(projectName)) { project ->
+        hashMapOf(
+            "name" to project.name,
+            "manager" to project.manager,
+            "members" to project.members,
+            "description" to project.description,
+            "startTime" to project.startTime,
+            "deadline" to project.deadline,
+            "status" to (if (project.taskCount == project.completeCount) "complete" else "on going")
+        )
+    }
+
+    fun getProjectMembers(userName: String, direction: Direction = Direction.DESCENDING) = Transformations.map(repository.onProjectsChange(userName, direction.name)) { projects ->
+        val list = ArrayList<HashMap<String, Any>>()
+        for (project in projects) {
+            list.add(
+                hashMapOf(
+                    "name" to project.name,
+                    "manager" to project.manager,
+                    "description" to project.description,
+                    "startTime" to project.startTime,
+                    "deadline" to project.deadline,
+                    "status" to (if (project.taskCount == project.completeCount) "complete" else "on going")
+                )
+            )
+        }
+        list
     }
 
     /**
@@ -98,7 +130,8 @@ class ProjectViewModel : ViewModel(), DefaultLifecycleObserver {
     override fun onStop(owner: LifecycleOwner) {
         super.onStop(owner)
         repository.stopListeningForUsersChanges()
-        repository.stopListeningForProjectsChangesForMember()
+        repository.stopListeningForProjectsChanges()
+        repository.stopListeningForProjectChanges()
         repository.stopListeningForTasksChangesForProject()
     }
 }

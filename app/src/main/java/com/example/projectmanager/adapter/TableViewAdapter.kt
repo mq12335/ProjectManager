@@ -4,12 +4,15 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.TextView
 import androidx.lifecycle.LiveData
 import com.example.projectmanager.R
 import com.example.projectmanager.model.Project
 import kotlinx.android.synthetic.main.table_list_item.view.*
 
 class TableViewAdapter(private val projectList: ArrayList<HashMap<String, String>>) : RecyclerView.Adapter<TableViewAdapter.RowViewHolder>() {
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RowViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.table_list_item, parent, false)
@@ -25,6 +28,7 @@ class TableViewAdapter(private val projectList: ArrayList<HashMap<String, String
     }
 
     override fun onBindViewHolder(holder: RowViewHolder, position: Int) {
+
         val rowPos = holder.adapterPosition
 
         if (rowPos == 0) {
@@ -47,6 +51,10 @@ class TableViewAdapter(private val projectList: ArrayList<HashMap<String, String
                 Status.text = modal.get("status")
             }
         }
+    }
+
+    fun getPosition(holder: RowViewHolder): Int {
+        return holder.adapterPosition
     }
 
     override fun getItemCount(): Int {

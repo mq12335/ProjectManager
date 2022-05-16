@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.ProjectDetailsActivity">
+    tools:context=".activities.ProjectDetailsActivity"
+    android:id="@+id/details">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_main"
@@ -28,4 +29,208 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/project"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_main">
+
+        <com.example.projectmanager.utils.TextViewBold
+            android:id="@+id/tv_project_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/clickable_text_view_padding"
+            android:text="Project Name :"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <com.example.projectmanager.utils.TextViewBold
+            android:id="@+id/tv_project_name_n"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            android:padding="@dimen/clickable_text_view_padding"
+            android:textColor="@color/black"
+            android:textSize="18sp" >
+        </com.example.projectmanager.utils.TextViewBold>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/manager"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/project">
+
+        <com.example.projectmanager.utils.TextViewBold
+            android:id="@+id/tv_manager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/clickable_text_view_padding"
+            android:text="Manager :"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <com.example.projectmanager.utils.TextViewBold
+            android:id="@+id/tv_manager_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            android:padding="@dimen/clickable_text_view_padding"
+            android:textColor="@color/black"
+            android:textSize="18sp" >
+        </com.example.projectmanager.utils.TextViewBold>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/member_list"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="150dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/manager">
+
+        <com.example.projectmanager.utils.TextViewBold
+            android:id="@+id/tv_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/clickable_text_view_padding"
+            android:text="Member :"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <com.example.projectmanager.utils.TextViewBold
+            android:id="@+id/tv_member_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            android:padding="@dimen/clickable_text_view_padding"
+            android:textColor="@color/black"
+            android:textSize="18sp" >
+        </com.example.projectmanager.utils.TextViewBold>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/project_details_status"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/member_list">
+
+        <com.example.projectmanager.utils.TextViewBold
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/clickable_text_view_padding"
+            android:text="Status :"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <com.example.projectmanager.utils.TextViewBold
+            android:id="@+id/tv_status_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            android:padding="@dimen/clickable_text_view_padding"
+            android:textColor="@color/black"
+            android:textSize="18sp" >
+        </com.example.projectmanager.utils.TextViewBold>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/project_details_description"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="250dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/project_details_status">
+
+        <com.example.projectmanager.utils.TextViewBold
+            android:id="@+id/tv_project_details_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/clickable_text_view_padding"
+            android:text="Description :"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <com.example.projectmanager.utils.TextViewBold
+            android:id="@+id/tv_project_details_description_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foreground="?attr/selectableItemBackground"
+            android:padding="@dimen/clickable_text_view_padding"
+            android:textColor="@color/black"
+            android:textSize="18sp" >
+        </com.example.projectmanager.utils.TextViewBold>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/outstanding_tasks"
+        android:layout_width="130dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="300dp"
+        app:layout_constraintTop_toBottomOf="@id/project_details_description">
+
+        <com.example.projectmanager.utils.TextViewBold
+            android:id="@+id/project_details_outstanding_tasks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/clickable_text_view_padding"
+            android:text="Outstanding Tasks :"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+
+
+<!--        <com.example.projectmanager.utils.TextViewBold-->
+<!--            android:id="@+id/outstanding_tasks_list"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:foreground="?attr/selectableItemBackground"-->
+<!--            android:padding="@dimen/clickable_text_view_padding"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="18sp" >-->
+<!--        </com.example.projectmanager.utils.TextViewBold>-->
+    </LinearLayout>
+
+    <com.example.projectmanager.utils.TextViewBold
+        android:id="@+id/tv_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="15dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="@dimen/clickable_text_view_padding"
+        android:text="Sign Out"
+        android:textColor="@color/black"
+        android:textSize="@dimen/lbl_text_view_textSize" />
+
+    <ListView
+        android:id="@+id/outstanding_tasks_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="330dp"
+        app:layout_constraintTop_toBottomOf="@id/outstanding_tasks"/>
+
+
+</RelativeLayout>

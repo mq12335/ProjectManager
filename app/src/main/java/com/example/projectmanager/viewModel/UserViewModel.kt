@@ -76,7 +76,7 @@ class UserViewModel : ViewModel(), DefaultLifecycleObserver {
     override fun onStop(owner: LifecycleOwner) {
         super.onStop(owner)
         repository.stopListeningForUsersChanges()
-        repository.stopListeningForProjectsChangesForMember()
+        repository.stopListeningForProjectsChanges()
         repository.stopListeningForTasksChangesForProject()
     }
 }
