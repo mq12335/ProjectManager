@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import com.example.projectmanager.R;
+import com.example.projectmanager.model.Task;
 import com.example.projectmanager.model.User;
 import com.example.projectmanager.viewModel.ProjectViewModel;
 import com.example.projectmanager.viewModel.UserViewModel;
@@ -25,6 +26,11 @@ public class TaskCreate extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_task_create);
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        String user = bundle.getString("User");
+
 
         viewModel = new ViewModelProvider(TaskCreate.this).get(ProjectViewModel.class);
         viewModel1 = new ViewModelProvider(TaskCreate.this).get(UserViewModel.class);
@@ -90,10 +96,16 @@ public class TaskCreate extends AppCompatActivity {
                     }
                 }
             });
+
+
         });
 
         finfish1.setOnClickListener(v ->{
-
+            Intent intent1 = new Intent(TaskCreate.this, ManagerList.class);
+            Bundle bundle1 = new Bundle();
+            bundle1.putString("User",user);
+            intent1.putExtras(bundle1);
+            startActivity(intent1);
             finish();
         });
 

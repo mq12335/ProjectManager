@@ -152,6 +152,7 @@ public class ManagerList extends AppCompatActivity {
             b1.putString("User", user);
             intent.putExtras(b1);
             startActivity(intent);
+            finish();
         });
         complete.setOnClickListener( v ->{
             Intent intent = new Intent(ManagerList.this, Filter.class);
