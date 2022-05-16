@@ -93,8 +93,7 @@ public class TaskCreate extends AppCompatActivity {
         });
 
         finfish1.setOnClickListener(v ->{
-            Intent intent = new Intent(TaskCreate.this, ManagerList.class);
-            startActivity(intent);
+
             finish();
         });
 
