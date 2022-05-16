@@ -68,6 +68,9 @@ public class CeateProject extends AppCompatActivity {
         EditText mm = findViewById(R.id.MM);
         EditText yyyy = findViewById(R.id.YYYY);
 
+        EditText num = findViewById(R.id.num);
+
+
 
 
 //        viewModel = new ViewModelProvider(this).get(ProjectViewModel.class);// *
@@ -86,8 +89,9 @@ public class CeateProject extends AppCompatActivity {
 //            deleteTask();
 //        });
         submitProjectButton.setOnClickListener(v -> {
+            int x = Integer.parseInt( num.getText().toString());
             String ddl = dd.getText().toString() + mm.getText().toString() + yyyy.getText().toString();
-            submitProject(createProjectName.getText().toString(), description.getText().toString(), ddl,user); // *
+            submitProject(createProjectName.getText().toString(), description.getText().toString(), ddl,user, x); // *
 
         });
 
@@ -143,12 +147,14 @@ public class CeateProject extends AppCompatActivity {
 //        System.out.println("ccc" + i);
 //    }
 
-    public void submitProject(String createProjectName, String projectDescription, String ddl,String user) {
+    public void submitProject(String createProjectName, String projectDescription, String ddl,String user, int x) {
 
         viewModel.addProject(createProjectName, user.isEmpty()?"user1":user, projectDescription, ddl);
-        Intent intent = new Intent(CeateProject.this, ManagerList.class);
+        Intent intent = new Intent(CeateProject.this, TaskCreate.class);
         Bundle mb = new Bundle();
         mb.putString("User", user);
+        mb.putInt("num",x);
+        mb.putString("name",createProjectName);
         intent.putExtras(mb);
         startActivity(intent);
         finish();

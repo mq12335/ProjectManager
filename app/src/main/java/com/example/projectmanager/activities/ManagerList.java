@@ -41,7 +41,7 @@ public class ManagerList extends AppCompatActivity {
 
 
         Button createProject = (Button) findViewById(R.id.creat_project);
-        Button createTask = (Button) findViewById(R.id.add_task);
+        //Button createTask = (Button) findViewById(R.id.add_task);
         Button complete = findViewById(R.id.complete);
         Button ongoing = findViewById(R.id.onging);
 
@@ -152,14 +152,14 @@ public class ManagerList extends AppCompatActivity {
             finish();
 
         });
-        createTask.setOnClickListener(v -> {
-            Intent intent = new Intent(ManagerList.this, TaskCreate.class);
-            Bundle b1 = new Bundle();
-            b1.putString("User", user);
-            intent.putExtras(b1);
-            startActivity(intent);
-            finish();
-        });
+//        createTask.setOnClickListener(v -> {
+//            Intent intent = new Intent(ManagerList.this, TaskCreate.class);
+//            Bundle b1 = new Bundle();
+//            b1.putString("User", user);
+//            intent.putExtras(b1);
+//            startActivity(intent);
+//            finish();
+//        });
         complete.setOnClickListener(v -> {
             Intent intent = new Intent(ManagerList.this, Filter.class);
             Bundle bundle = new Bundle();

@@ -108,7 +108,7 @@ class RegisterActivity : BaseActivity() {
                         hideProgressDialog()
                         if(task.isSuccessful) {
                             val firebaseUser: FirebaseUser = task.result!!.user!!
-                            viewModel.addUser(name,identity,email,password,"", "", {},{})
+                            viewModel.addUser(name,identity,email,"", "", {},{})
                             Toast.makeText(
                                 this@RegisterActivity,
                                 resources.getString(R.string.register_success),

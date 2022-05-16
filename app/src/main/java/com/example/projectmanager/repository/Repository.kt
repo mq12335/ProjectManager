@@ -1,11 +1,8 @@
 package com.example.projectmanager.repository
 
-import android.app.Activity
 import android.util.Log
 import androidx.lifecycle.*
-import com.google.android.gms.tasks.Tasks
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration

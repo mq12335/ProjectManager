@@ -38,12 +38,11 @@ class UserViewModel : ViewModel(), DefaultLifecycleObserver {
         userName: String = "",
         identity: String = "",
         email: String = "",
-        password: String = "",
         notification: String = "",
         previousNotification: String = "",
         onSuccessAction: () -> Unit,
         onFailureAction: () -> Unit
-    ) = repository.addUser(User(userName, identity, email, password, notification, previousNotification), onSuccessAction, onFailureAction)
+    ) = repository.addUser(User(userName, identity, email, notification, previousNotification), onSuccessAction, onFailureAction)
 
     fun updateUserProfile(
         user: String,

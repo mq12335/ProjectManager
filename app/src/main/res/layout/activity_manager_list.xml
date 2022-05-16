@@ -26,12 +26,12 @@
             android:layout_weight="1"
             android:text="@string/create_project" />
 
-        <Button
-            android:id="@+id/add_task"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/add_task" />
+<!--        <Button-->
+<!--            android:id="@+id/add_task"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="@string/add_task" />-->
 
         <Button
             android:id="@+id/onging"

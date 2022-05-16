@@ -116,9 +116,11 @@
             android:layout_height="wrap_content"
             android:text="@string/number_of_task"/>
         <EditText
+            android:id="@+id/num"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/number_of_task"/>
+            android:hint="@string/number_of_task"
+            android:inputType="number"/>
     </LinearLayout>
     <Button
         android:layout_marginTop="40sp"
