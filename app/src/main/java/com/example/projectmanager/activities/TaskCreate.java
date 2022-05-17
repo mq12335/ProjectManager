@@ -91,7 +91,7 @@ public class TaskCreate extends AppCompatActivity {
                             }
                         });
                     } else {
-                        String new_notification = user.getNotification() + "\n" + "You are assigned to " + add.getText().toString();
+                        String new_notification = user.getNotification() + " ; " + "You are assigned to " + add.getText().toString();
                         viewModel1.updateUserNotification(membername.getText().toString(), new_notification, new Function0<Unit>() {
                             @Override
                             public Unit invoke() {

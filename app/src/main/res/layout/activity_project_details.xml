@@ -8,13 +8,14 @@
     android:id="@+id/details">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_main"
+        android:id="@+id/toolbar_main_1"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@drawable/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
@@ -34,11 +35,12 @@
         android:layout_width="340dp"
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
+        android:layout_marginLeft="25dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_main">
+        app:layout_constraintTop_toBottomOf="@id/toolbar_main_1">
 
         <com.example.projectmanager.utils.TextViewBold
             android:id="@+id/tv_project_name"
@@ -65,6 +67,7 @@
         android:layout_width="340dp"
         android:layout_height="50dp"
         android:layout_marginTop="100dp"
+        android:layout_marginLeft="25dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -96,6 +99,7 @@
         android:layout_width="340dp"
         android:layout_height="50dp"
         android:layout_marginTop="150dp"
+        android:layout_marginLeft="25dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,6 +131,7 @@
         android:layout_width="340dp"
         android:layout_height="50dp"
         android:layout_marginTop="200dp"
+        android:layout_marginLeft="25dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -158,6 +163,7 @@
         android:layout_width="340dp"
         android:layout_height="50dp"
         android:layout_marginTop="250dp"
+        android:layout_marginLeft="25dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -186,9 +192,10 @@
 
     <LinearLayout
         android:id="@+id/outstanding_tasks"
-        android:layout_width="130dp"
+        android:layout_width="200dp"
         android:layout_height="25dp"
         android:layout_marginTop="300dp"
+        android:layout_marginLeft="25dp"
         app:layout_constraintTop_toBottomOf="@id/project_details_description">
 
         <com.example.projectmanager.utils.TextViewBold
@@ -215,13 +222,25 @@
 
     <com.example.projectmanager.utils.TextViewBold
         android:id="@+id/tv_home"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="12dp"
         android:foreground="?attr/selectableItemBackground"
         android:padding="@dimen/clickable_text_view_padding"
         android:text="Sign Out"
+        android:textColor="@color/black"
+        android:textSize="@dimen/lbl_text_view_textSize" />
+
+    <com.example.projectmanager.utils.TextViewBold
+        android:id="@+id/tv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="15dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="@dimen/clickable_text_view_padding"
+        android:text="Back"
         android:textColor="@color/black"
         android:textSize="@dimen/lbl_text_view_textSize" />
 
@@ -229,8 +248,9 @@
         android:id="@+id/outstanding_tasks_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="330dp"
-        app:layout_constraintTop_toBottomOf="@id/outstanding_tasks"/>
+        android:layout_marginTop="340dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintTop_toBottomOf="@id/outstanding_tasks" />
 
 
 </RelativeLayout>

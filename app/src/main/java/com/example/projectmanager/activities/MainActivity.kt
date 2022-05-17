@@ -3,19 +3,15 @@ package com.example.projectmanager.activities
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
+import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
-import android.widget.ListView
-import android.widget.SimpleAdapter
-import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.projectmanager.R
 import com.example.projectmanager.viewModel.ProjectViewModel
 import com.example.projectmanager.viewModel.UserViewModel
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.tv_home
-import kotlinx.android.synthetic.main.activity_user_profile.*
 
 class MainActivity : BaseActivity(), View.OnClickListener {
     private lateinit var viewModel: ProjectViewModel
@@ -29,7 +25,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         viewModel1 = ViewModelProvider(this).get(UserViewModel::class.java)
         //val project_list = findViewById<RecyclerView>(R.id.recyclerViewProjectList) as RecyclerView
         val project_list_show = findViewById<View>(R.id.recyclerViewProjectList) as ListView
-
+        //Button createTask = (Button) findViewById(R.id.add_task);
 
        // getcurrentUser()
         val intent = getIntent()
@@ -47,7 +43,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                     viewModel1.updateUserNotification(username, "", {}, {})
                 }
             }
-            viewModel.getProjectsStatus(username).observe(this) { projects ->
+            viewModel.getProjectsStatus(username).observe(this@MainActivity, Observer<ArrayList<HashMap<String, String>>> { projects: ArrayList<HashMap<String, String>>? ->
                 println(projects)
                 var bundle = Bundle()
                 bundle.putString("User", username)
@@ -61,18 +57,37 @@ class MainActivity : BaseActivity(), View.OnClickListener {
                 project_list_show.adapter = simpleAdapter
                 project_list_show.onItemClickListener =
                     OnItemClickListener { _: AdapterView<*>?, _: View?, i: Int, _: Long ->
-                            println(projects[i])
-                            val intent = Intent(this@MainActivity, ProjectDetailsActivity::class.java)
-                            bundle.putString("Project", projects[i]["name"])
-                            intent.putExtras(bundle)
-                            startActivity(intent)
-                    }
-            }
+                        println(projects?.get(i))
+                        val intent = Intent(this@MainActivity, ProjectDetailsActivity::class.java)
+                        bundle.putString("Project", projects?.get(i)?.get("name"))
+                        intent.putExtras(bundle)
+                        finish()
+                        startActivity(intent)
+                    } })
         }
 
         tv_home.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
             val intent = Intent(this@MainActivity, LoginActivity::class.java)
+            finish()
+            startActivity(intent)
+        }
+
+        complete_order.setOnClickListener {
+            val intent = Intent(this@MainActivity, Filter::class.java)
+            val bundle = Bundle()
+            bundle.putString("status", "complete")
+            bundle.putString("User", username)
+            intent.putExtras(bundle)
+            startActivity(intent)
+        }
+
+        onging_order.setOnClickListener {
+            val intent = Intent(this@MainActivity, Filter::class.java)
+            val bundle = Bundle()
+            bundle.putString("status", "ongning")
+            bundle.putString("User", username)
+            intent.putExtras(bundle)
             startActivity(intent)
         }
 

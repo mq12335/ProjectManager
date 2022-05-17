@@ -98,16 +98,19 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
                             showTwoButtonDialog("", "Do you want to edit your profile?","Yes", "No", View.OnClickListener {
                                 val intent = Intent(this@LoginActivity, UserProfileActivity::class.java)
                                 intent.putExtras(bundle)
+                                finish()
                                 startActivity(intent)
                             },View.OnClickListener {
                                 if(currentUser.identity=="manager") {
                                     val intent = Intent(this@LoginActivity, ManagerList::class.java)
                                     intent.putExtras(bundle)
+                                    finish()
                                     startActivity(intent)
                                 } else {
                                     val intent =
                                         Intent(this@LoginActivity, MainActivity::class.java)
                                     intent.putExtras(bundle)
+                                    finish()
                                     startActivity(intent)
                                 }
                             })

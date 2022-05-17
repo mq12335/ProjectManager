@@ -29,7 +29,7 @@ class ProjectViewModel : ViewModel(), DefaultLifecycleObserver {
             list.add(
                 hashMapOf(
                     "name" to project.name,
-                    "status" to (if (project.taskCount == project.completeCount) "complete" else "on going")
+                    "status" to (if (project.taskCount == project.completeCount) "complete" else "ongoing")
                 )
             )
         }
@@ -49,7 +49,7 @@ class ProjectViewModel : ViewModel(), DefaultLifecycleObserver {
             "description" to project.description,
             "startTime" to project.startTime,
             "deadline" to project.deadline,
-            "status" to (if (project.taskCount == project.completeCount) "complete" else "on going")
+            "status" to (if (project.taskCount == project.completeCount) "complete" else "ongoing")
         )
     }
 
@@ -63,7 +63,7 @@ class ProjectViewModel : ViewModel(), DefaultLifecycleObserver {
                     "description" to project.description,
                     "startTime" to project.startTime,
                     "deadline" to project.deadline,
-                    "status" to (if (project.taskCount == project.completeCount) "complete" else "on going")
+                    "status" to (if (project.taskCount == project.completeCount) "complete" else "ongoing")
                 )
             )
         }
@@ -90,7 +90,7 @@ class ProjectViewModel : ViewModel(), DefaultLifecycleObserver {
         projectDescription: String,
         projectDdl: String,
     ) {
-        repository.addProject(Project(projectName, managerName, arrayListOf(managerName), projectDescription, "", projectDdl, 0, 0,"on going"), {}, {})
+        repository.addProject(Project(projectName, managerName, arrayListOf(managerName), projectDescription, "", projectDdl, 0, 0,"ongoing"), {}, {})
 //        repository.addTask(Task(taskName, projectName, taskMemberName, "on going", taskDdl), {}, {})
     }
 
@@ -114,7 +114,7 @@ class ProjectViewModel : ViewModel(), DefaultLifecycleObserver {
         }
 
     fun addTask(taskName: String, projectName: String, taskMemberName: String, taskDdl: String) =
-        repository.addTask(Task(taskName, projectName, taskMemberName, "on going", taskDdl), {}, {})
+        repository.addTask(Task(taskName, projectName, taskMemberName, "assigned", taskDdl), {}, {})
 
     /**
      * Change the task's status to "complete".

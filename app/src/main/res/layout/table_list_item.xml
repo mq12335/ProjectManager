@@ -7,22 +7,23 @@
 
     <TextView
         android:id="@+id/ProjectName"
-        android:layout_width="wrap_content"
+        android:layout_width="156dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_gravity="top"
-        android:background="@color/colorLightGrey"
+        android:background="@color/colorSnackBarError"
         android:text="Project Name"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/Status"
-        android:layout_width="226dp"
+        android:layout_width="156dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
+        android:layout_marginLeft="40dp"
         android:layout_gravity="top"
-        android:background="@color/colorLightGrey"
+        android:background="@color/primaryTheme"
         android:text="Status"
         android:textSize="18sp" />
+
 
 </LinearLayout>

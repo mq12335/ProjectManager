@@ -47,13 +47,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="55dp"/>
+        <com.example.projectmanager.utils.Button1
+            android:id="@+id/onging_order"
+            android:layout_width="60dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="15dp"
+            android:text="ongoing"
+            android:textSize="5sp"
+            android:textColor="@color/white"
+            android:background="@drawable/button_background"/>
+
+    <com.example.projectmanager.utils.Button1
+        android:id="@+id/complete_order"
+        android:layout_width="60dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_background"
+        android:text="complete"
+        android:textColor="@color/white"
+        android:textSize="5sp" />
 
     <com.example.projectmanager.utils.TextViewBold
         android:id="@+id/tv_home"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="300dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="12dp"
         android:foreground="?attr/selectableItemBackground"
         android:padding="@dimen/clickable_text_view_padding"
         android:text="Sign Out"
