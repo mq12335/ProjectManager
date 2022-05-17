@@ -3,23 +3,33 @@
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#87CEFA">
-    <TextView
+    <LinearLayout
         android:layout_width="150sp"
+        android:background="#90EE90"
+        android:layout_height="wrap_content" android:layout_weight="1">
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/projectName"
         android:textSize="20sp"
         android:layout_weight="1"
         tools:ignore="SmallSp"
-        android:layout_marginStart="20sp"
-        android:background="	#90EE90"
+        android:layout_marginStart="40sp"
+
        />
+    </LinearLayout>
+    <LinearLayout
+        android:background="#FFFF00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/project_status"
         android:layout_weight="1"
         android:layout_marginStart="50sp"
-        android:background="#FFFF00"
-        />
 
+        />
+</LinearLayout>
 </LinearLayout>
