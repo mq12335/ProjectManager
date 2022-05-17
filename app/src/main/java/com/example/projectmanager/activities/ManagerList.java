@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import com.example.projectmanager.R;
 import com.example.projectmanager.viewModel.ProjectViewModel;
@@ -39,7 +40,11 @@ public class ManagerList extends AppCompatActivity {
         String user = bundle1.getString("User");
         ListView lv1 = (ListView) findViewById(R.id.lv1);
 
+//        List<String> comp = new ArrayList<String>();
+//        comp.addAll(Arrays.asList(status));
 
+
+        final int[] xxy = {2};
         Button createProject = (Button) findViewById(R.id.creat_project);
         //Button createTask = (Button) findViewById(R.id.add_task);
         Button complete = findViewById(R.id.complete);
@@ -57,17 +62,22 @@ public class ManagerList extends AppCompatActivity {
                             List<String> arr2 = new ArrayList<String>();
                             arr2.addAll(Arrays.asList(status));
 
+
                             List<Map<String, Object>> itemlist = new ArrayList<Map<String, Object>>();
 
                             for (int i = 0; i < hashMaps.size(); i++) {
                                 arr.add(hashMaps.get(i).get("name"));
-                                if (hashMaps.get(i).get("status") == "on going")
-                                    arr2.add("*"+hashMaps.get(i).get("status"));
-                                else
+                                if (hashMaps.get(i).get("status") == "on going") {
+                                    arr2.add("*" + hashMaps.get(i).get("status"));
+                                } else {
                                     arr2.add(hashMaps.get(i).get("status"));
+
+
+                                }
                                 System.out.println(arr.size());
 
                             }
+
                             String[] out = arr.toArray(new String[arr.size()]);
                             String[] out2 = arr2.toArray(new String[arr2.size()]);
                             // System.out.println(out2.length);

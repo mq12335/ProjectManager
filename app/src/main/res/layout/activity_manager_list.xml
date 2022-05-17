@@ -1,18 +1,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="	#CAE1FF"
-    >
-
-
-    <ListView
-        android:id="@+id/lv1"
+    android:orientation="vertical">
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    </ListView>
+        <ListView
+            android:id="@+id/lv1"
+            android:layout_width="match_parent"
+                android:layout_height="500dp">
 
+        </ListView>
+    </LinearLayout>
+</ScrollView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,12 +31,12 @@
             android:layout_weight="1"
             android:text="@string/create_project" />
 
-<!--        <Button-->
-<!--            android:id="@+id/add_task"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1"-->
-<!--            android:text="@string/add_task" />-->
+        <!--        <Button-->
+        <!--            android:id="@+id/add_task"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_weight="1"-->
+        <!--            android:text="@string/add_task" />-->
 
         <Button
             android:id="@+id/onging"
